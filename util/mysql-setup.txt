@@ -1,0 +1,25 @@
+remote VPS:
+192.210.180.121
+
+Remote VPS:
+account: lewin
+passwd: Zx703475.
+
+Remote MysqlDB root:
+account: root
+passwd: Zx703475.
+
+Mysql localhost user:
+account: 'local'@'localhost'
+passwd: localhost
+
+Mysql Remote user:
+account: remote
+passwd: Zx703475.
+
+How to set up a remote user:
+1. Open Mysql terminal;
+2. CREATE USER 'remote'@'171.43.93.24' IDENTIFIED BY 'Zx703475.';
+3. GRANT ALL PRIVILEGES ON test.* TO 'remote'@'171.43.93.24';
+4. FLUSH PRIVILEGES;
+5. quit;
