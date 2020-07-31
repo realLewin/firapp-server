@@ -9,6 +9,9 @@ const Post = sequelize.define("Post", {
   content: {
     type: DataTypes.STRING,
   },
+  imagePath: {
+    type: DataTypes.STRING,
+  },
 });
 
 module.exports = Post;

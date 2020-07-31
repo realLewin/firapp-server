@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
+var postController = require("../controllers/post-controller");
 
-router.get("/", (req, res, next) => {
-  console.log(req.body);
-  res.send("hello from server");
-});
+router.post("/post", postController.insertPost);
+
+router.get("/get", postController.getPost);
 
 module.exports = router;

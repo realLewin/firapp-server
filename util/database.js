@@ -10,6 +10,19 @@ const sequelize = new Sequelize("test", "remote", "Zx703475.", {
 
 module.exports = sequelize;
 
+// Test for sequelize connection;
+// const test = async () => {
+//   try {
+//     await sequelize.authenticate();
+//     console.log("Successful");
+//   } catch (err) {
+//     console.log(err);
+//   } finally {
+//     sequelize.close();
+//   }
+// };
+// test();
+
 /**
  * This is for mysql2 use;
  */
