@@ -23,7 +23,7 @@ exports.getPost = (req, res, next) => {
   Post.sync()
     .then(async () => {
       const posts = await Post.findAll({
-        attributes: ["title", "content"],
+        attributes: ["title", "content", "imagePath"],
       });
       let result = [];
       posts.forEach((m) => result.push(m.dataValues));
