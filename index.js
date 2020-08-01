@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 
 var postRouter = require("./routes/post");
-// var imageRouter = require("./data/images/process-image");
+var userMetadataRouter = require("./routes/user-metadata");
 
 var app = express();
 app.use(bodyParser.json());
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/api/post", postRouter);
-// app.use("/image", imageRouter);
+app.use("/api/user-metadata", userMetadataRouter);
 
 app.use((err, req, res, next) => {
   console.log(err);

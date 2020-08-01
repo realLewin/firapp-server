@@ -1,5 +1,4 @@
 var Post = require("../models/post-model");
-const { sequelize } = require("sequelize");
 
 exports.insertPost = (req, res, next) => {
   const postData = req.body;
