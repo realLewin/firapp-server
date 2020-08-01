@@ -19,8 +19,8 @@ passwd: Zx703475.
 
 How to set up a remote user:
 1. mysql -u root -p
-2. CREATE USER 'remote'@'171.43.95.37' IDENTIFIED BY 'Zx703475.';
-3. GRANT ALL PRIVILEGES ON test.* TO 'remote'@'171.43.95.37';
+2. CREATE USER 'remote'@'171.43.92.148' IDENTIFIED BY 'Zx703475.';
+3. GRANT ALL PRIVILEGES ON test.* TO 'remote'@'171.43.92.148';
 4. FLUSH PRIVILEGES;
 5. quit;
 // for docker:
@@ -32,7 +32,7 @@ manage user in mysql(in mysql terminal):
 SELECT user, host FROM mysql.user;
 2. Drop a user:
 DROP USER IF EXISTS 'database_user'@'localhost';
-DROP USER IF EXISTS 'remote'@'';
+DROP USER IF EXISTS 'remote'@'171.43.95.37';
 
 docker:
 docker run -p 7777:7777 -d lewin/firapp

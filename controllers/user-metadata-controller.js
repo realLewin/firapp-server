@@ -1,8 +1,30 @@
 var User_Metadata = require("../models/user-metadata-model");
 
 exports.get = (req, res, next) => {
-  console.log("get");
+  const email = req.query.email;
+  console.log(email);
+
+  User_Metadata.sync()
+    .then(async () => {
+      const data = await User_Metadata.findAll({
+        attributes: [
+          "first_name",
+          "last_name",
+          "user_gender",
+          "user_birth",
+          "user_bio",
+        ],
+        where: {
+          email: email,
+        },
+      });
+      console.log(data);
+      console.log("suc");
+      res.send(JSON.stringify(data));
+    })
+    .catch((err) => console.log(err));
 };
+
 exports.post = (req, res, next) => {
   const postData = req.body;
 
